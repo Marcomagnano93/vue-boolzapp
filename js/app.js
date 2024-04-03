@@ -169,7 +169,7 @@ createApp({
         ],
         contactIndex: 0,
         userMessage: '',
-        testMessage: 'Ok'
+        
       }
     },
     methods: {
@@ -194,7 +194,16 @@ createApp({
             this.contacts[this.contactIndex].messages.push(newMessage)
             this.userMessage = "" 
             }
+            setTimeout(this.sendFakeMessage, 1000 )
         },
+        sendFakeMessage(){
+            let fakeMessage = {
+                date: '',
+                message: 'Ok',
+                status: 'received'
+                }
+            this.contacts[this.contactIndex].messages.push(fakeMessage)
+        }
     }
     }
   ).mount('#app')

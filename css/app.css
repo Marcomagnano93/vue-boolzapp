@@ -146,8 +146,6 @@ body {
 .main__chat {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
-    /* display: flex;
-    flex-direction: column; */
     padding: 24px;
     overflow: auto;
 }
@@ -165,6 +163,7 @@ body {
     position: relative;
     justify-content: space-between;
     gap: 16px;
+
 }
 
 .sent {
@@ -265,12 +264,14 @@ body {
         justify-content: center;
         align-items: center;
         padding: 8px;
-        max-height: 70px;
-        
+        max-height: 70px;    
         
     }
-/* over class ****************************************************************************** */
-    /* .contacts_section .card:hover  */
+
+    .contacts_section .card {
+        cursor: pointer;
+    }
+
 
     .active { background-color: rgba(237, 237, 237, 0.5)
     }

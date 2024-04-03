@@ -171,28 +171,16 @@ createApp({
       }
     },
     methods: {
-        chatChanger(i, contact){
-
-            // if(contact.active !== true ){
-            //     contact.active = true    
-            // }
-            // else { contact.active = false }
+        chatChanger(i){
            return this.contactIndex = i;
         },
         textDecoration(status){
-
             if(status === 'received') return "received"
             else return "sent"
-
-        }
-        // activeContact(contact){
-        //     if(contact.active === true ){
-        //         return "active"
-        //     }
-        //     else { 
-        //         return ""
-        //     }
-        // }
+        },
+        activeChat(i){
+            if(this.contactIndex === i ) return "active"           
+        },
     }
     }
   ).mount('#app')

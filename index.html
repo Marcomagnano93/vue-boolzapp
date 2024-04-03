@@ -55,7 +55,8 @@
                             <li class="card"
                             
                             v-for="(contact,i) in contacts"
-                            @click="chatChanger(i, contact)"
+                            @click="chatChanger(i)"
+                            :class="activeChat(i)"
                             
                             >
                                 <div class="card-img"><img :src="contact.avatar" alt=""></div>
@@ -111,36 +112,6 @@
 
                                 </li>
                             </ul>
-                            <!-- <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.?</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message received">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.tate!</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div> -->
-
                         </section>
 
                         <section class="chat__footer">
@@ -156,8 +127,6 @@
                                 <i class="fa-solid fa-microphone block"></i>
                             </div>
                         </section>
-
-
                     </main>
                  </div>
             </div>
@@ -280,3 +249,36 @@
                                     <time>16:15</time>
                                 </div>
                             </li> -->
+
+
+
+
+                             <!-- <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.?</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message received">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.tate!</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div> -->

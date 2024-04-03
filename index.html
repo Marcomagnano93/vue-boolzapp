@@ -98,8 +98,8 @@
                         </section>
 
                         <section class="main__chat">
-                            <ul>
-                                <li class="message"
+                            <ul class="chat_wrapper">
+                                <li class="message"  :class="textDecoration(currentChat.status)"
                                 v-for="currentChat in contacts[contactIndex].messages"
                                 >
 

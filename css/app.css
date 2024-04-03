@@ -146,19 +146,25 @@ body {
 .main__chat {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     padding: 24px;
     overflow: auto;
 }
 
-.message {
+.chat_wrapper{
+    display: flex;
+    flex-direction: column;
+}
 
-    max-width: 80%;
+.message {
+    max-width: 60%;
     padding: 16px;
     border-radius: 12px;
     display: flex;
     position: relative;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 .sent {
@@ -292,7 +298,7 @@ body {
     /* chat main */
 
     .message {
-        max-width: 60%;
+        max-width: 50%;
     }
 
 
@@ -426,7 +432,6 @@ body {
         box-sizing: border-box;
         outline: none;
     }
-
 
 
 }

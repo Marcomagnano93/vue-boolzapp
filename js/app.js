@@ -179,6 +179,12 @@ createApp({
             // else { contact.active = false }
            return this.contactIndex = i;
         },
+        textDecoration(status){
+
+            if(status === 'received') return "received"
+            else return "sent"
+
+        }
         // activeContact(contact){
         //     if(contact.active === true ){
         //         return "active"

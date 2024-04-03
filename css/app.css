@@ -1,0 +1,432 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+ul, li, menu {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ROOT */
+
+:root {
+    --bz_green: #4D9388;
+    --bz_gray: #DBDBD4;
+    --chat_green: #DEF8C0;
+    --chat_azure: #A6D7F9;
+    --chat_lightgray: #EAEAEA;
+    --text_gray: #B1B1B1;
+    --bg-lightgray: #FAFAFA;
+    --icon-darkgray: #6D7376;
+
+}
+
+
+/* STYLE */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-gray {
+    background-color: var(--chat_lightgray);
+}
+
+/* LAYOUT */
+#app {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--bz_green) 0, var(--bz_green)  15%, var(--bz_gray) 15%, var(--bz_gray) 100%)
+  
+}
+
+
+.app_content {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.app_wrap {
+    display: flex;
+    height: 100%;
+}
+
+.app_chat {
+    width: 100%;
+}
+
+.app_side {
+    display: none;
+    
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* HEADER */
+
+.card-img {
+    max-width: 50px;
+}
+
+.card-img img {
+    aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+
+.card_notification {
+    display: none;
+}
+
+.notification_btn {
+    aspect-ratio: 1/1;
+	border-radius: 50%;
+	height: 50px;
+	padding: 0;
+    background-color: white;
+    color: var(--chat_azure);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.search,
+.search-bar i {
+    display: none;
+}
+
+
+/* CHAT */
+
+.chat_header {
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-left: 1px solid var(--text_gray);
+
+}
+
+.icons {
+    display: flex;
+    gap: 16px;
+    color: var(--text_gray);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.app_chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_section.username {
+    flex-grow: 1;
+    margin-left: 12px;
+}
+
+.main__chat {
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    overflow: auto;
+}
+
+.message {
+
+    max-width: 80%;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    position: relative;
+}
+
+.sent {
+    background-color: var(--chat_green);
+    align-self: flex-end;
+   
+}
+
+.received {
+    background-color: white;
+    align-self: flex-start;
+
+}
+
+.message i {
+    color: var(--icon-darkgray);
+    font-size: 16px;
+}
+
+.message time {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    font-size: 12px;
+    color: var(--text_gray);
+}
+
+.message.received + .message.received {
+    margin-top: 3px;
+}
+
+.message.sent + .message.sent {
+    margin-top: 3px;
+}
+
+.message.sent + .message.received,
+.message.received + .message.sent {
+    margin-top: 20px;
+}
+
+/* CHAT FOOTER */
+
+.chat__footer {
+    width: 100%;
+    background-color: var(--chat_lightgray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+}
+
+.writebar {
+    flex-grow: 1;
+}
+
+.sendbar {
+    width: 100%;
+    padding: 16px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.chat__footer i {
+    display: none;
+}
+
+
+
+/* ************LAYOUT TABLET**************** */
+
+@media (min-width: 576px) {
+
+    .app_chat {
+        flex-grow: 1;
+
+    }
+
+    .app_side.block {
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        
+    }
+
+/* HEADER */
+
+    .icons.md-none {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        max-height: 70px;
+        
+        
+    }
+/* over class ****************************************************************************** */
+    .contacts_section .card:hover {
+        background-color: rgba(237, 237, 237, 0.5)
+    }
+
+    .card:not(:first-of-type) {
+        border-top: 1px solid var(--chat_lightgray);
+    }
+    
+    header .card_section {
+        display: none;
+    }
+
+    .card_notification {
+        display: none;
+    }
+
+    .contacts_section {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 600px;
+        overflow: auto;
+        flex-grow: 1;
+    }
+
+    /* chat main */
+
+    .message {
+        max-width: 60%;
+    }
+
+
+/* tablet CHAT FOOTER */
+
+.chat__footer {
+    padding: 8px 0;
+}
+
+.chat__footer i.block {
+    display: block;
+}
+
+.footer_icon {
+    color: var(--icon-darkgray);
+    font-size: 22px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+}
+
+
+
+/* ******************LAYOUT DESKTOP*********** */
+@media (min-width: 1200px) {
+
+    .app_content {
+        width: 80%;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    #app {
+        padding: 32px 0;
+    }
+
+
+    .app_side.block {
+        width: 370px;
+
+        
+    }
+
+
+
+    /* header */
+    .icons.md-none {
+        display: flex;
+        gap: 16px;
+        color: var(--text_gray);
+    }
+    
+    .card {
+        justify-content: space-between;
+        padding: 12px;
+        
+
+        
+    }
+
+
+
+   header .card_section {
+        display: block;
+    }
+
+
+
+    .card_notification {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        justify-content: space-around;
+        background-color: var(--chat_azure);
+        max-height: 70px;
+    }
+
+    .card_section p,
+    .card_date,
+    .card_notification > .card_section h2 {
+        font-size: 12px;
+    }
+
+    .card_section h2 {
+        font-size: 16px;
+        font-weight: 200;
+    }
+
+    .card_section p,
+    .card_date {
+        color: var(--text_gray);
+    }
+
+    .card_date {
+        align-self: flex-start;
+    }
+
+
+    .card_notification p {
+        text-decoration: underline;
+    
+    }
+
+    .search-bar {
+        margin: 4px;
+        background-color: var(--bg-lightgray);
+        position: relative;
+    }
+
+    .search-bar i {
+        position: absolute;
+        display: block;
+        top: 30%;
+        left: 32px;
+        transform: translate(-50%);
+        pointer-events: none;
+        color: var(--text_gray)
+    }
+
+    .search {
+        width: 100%;
+        padding: 6px 10px 6px 50px;
+        display: inline-block;
+        border: 1px solid #cccccc90;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+
+
+}
+

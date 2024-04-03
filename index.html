@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <script src="https://kit.fontawesome.com/608f77ef5b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+     <div id="app">
+        
+            <div class="app_content">
+                <div class="app_wrap">
+                    <header class="app_side block"> 
+                        <!-- io card -->
+                        <div class="card bg-gray">
+                            <div class="card-img"><img src="./img/avatar_io.jpg" alt=""></div>
+                        
+
+                            <ul class="icons md-none ">
+                                <li><i class="fa-solid fa-circle-notch"></i></li>
+                                <li><i class="fa-solid fa-message"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </div>
+                        <!-- NOTIFICATION -->
+                        <div class="card_notification">
+                            <div class="notification_btn"><i class="fa-solid fa-bell-slash"></i></div>
+                        
+
+                            <div class="card_section">
+                                <h2>Ricevi notifiche di nuovi messaggi</h2>
+                                <p>Attiva notifiche desktop</p>
+                            </div>
+                        </div>
+                        <!-- SEARCH BAR -->
+                        <nav class="search-bar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="fname" name="search" placeholder="Cerca o inizia una nuova chat" class="search">
+                        </nav>
+
+                        <!-- CONTACTS CARDS -->
+                        <ul class="contacts_section">
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_1.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Michele</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_2.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Fabio</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_3.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Samuele</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_4.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Alessandro B.</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_5.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Alessandro L.</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_6.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Claudia</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_7.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Federico</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+
+                            <li class="card">
+                                <div class="card-img"><img src="./img/avatar_8.jpg" alt=""></div>
+                            
+
+                                <div class="card_section">
+                                    <h2>Davide</h2>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+
+                                <div class="card_section card_date">
+                                    <time>16:15</time>
+                                </div>
+                            </li>
+                        </ul>
+                    </header>
+                        
+                    <main class="app_chat"> <!-- chat -->
+
+
+                        <section class="chat_header bg-gray">
+                            <div class="card_section">
+                                <div class="card-img"><img src="./img/avatar_1.jpg" alt=""></div>
+                            </div>
+
+                            <div class="card_section username">
+                                <h2>Michele</h2>
+                                <p>Ultimo accesso oggi alle 16:26</p>
+                            </div>
+                            
+                           
+                            
+                            
+                            
+                        
+
+                            <ul class="icons">
+                                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                                <li><i class="fa-solid fa-paperclip"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </section>
+
+                        <section class="main__chat">
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.?</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message received">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.tate!</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                        </section>
+
+                        <section class="chat__footer">
+                            <div class="footer_icon ">
+                                <i class="fa-regular fa-face-smile block"></i>
+                            </div>
+
+                            <div class="writebar">
+                                <input type="text" id="fname" name="send" placeholder="Scrivi un messaggio" class="sendbar">
+                            </div>
+
+                            <div class="footer_icon ">
+                                <i class="fa-solid fa-microphone block"></i>
+                            </div>
+                        </section>
+
+
+                    </main>
+                 </div>
+            </div>
+     </div>
+
+     <script src="./js/app.js"></script>
+</body>
+</html>

@@ -168,6 +168,8 @@ createApp({
             }
         ],
         contactIndex: 0,
+        userMessage: '',
+        testMessage: 'Ok'
       }
     },
     methods: {
@@ -180,6 +182,18 @@ createApp({
         },
         activeChat(i){
             if(this.contactIndex === i ) return "active"           
+        },
+        sendMessage() {
+            if(this.userMessage !== "")
+            {
+            let newMessage = {
+                date: '',
+                message: this.userMessage,
+                status: 'sent'
+                }
+            this.contacts[this.contactIndex].messages.push(newMessage)
+            this.userMessage = "" 
+            }
         },
     }
     }

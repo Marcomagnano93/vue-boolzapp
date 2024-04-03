@@ -264,8 +264,9 @@ body {
         
     }
 /* over class ****************************************************************************** */
-    .contacts_section .card:hover {
-        background-color: rgba(237, 237, 237, 0.5)
+    /* .contacts_section .card:hover  */
+
+    .active { background-color: rgba(237, 237, 237, 0.5)
     }
 
     .card:not(:first-of-type) {

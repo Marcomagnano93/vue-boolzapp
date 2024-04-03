@@ -108,6 +108,7 @@ createApp({
             name: 'Claudia',
             avatar: './img/avatar_6.jpg',
             visible: true,
+
             messages: [
                 {
                 date: '10/01/2020 15:30:55',
@@ -165,8 +166,27 @@ createApp({
                 }
                 ],
             }
-        ]
+        ],
+        contactIndex: 0,
       }
+    },
+    methods: {
+        chatChanger(i, contact){
+
+            // if(contact.active !== true ){
+            //     contact.active = true    
+            // }
+            // else { contact.active = false }
+           return this.contactIndex = i;
+        },
+        // activeContact(contact){
+        //     if(contact.active === true ){
+        //         return "active"
+        //     }
+        //     else { 
+        //         return ""
+        //     }
+        // }
     }
     }
   ).mount('#app')

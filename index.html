@@ -53,7 +53,10 @@
                         <!-- CONTACTS CARDS -->
                         <ul class="contacts_section">
                             <li class="card"
+                            
                             v-for="(contact,i) in contacts"
+                            @click="chatChanger(i, contact)"
+                            
                             >
                                 <div class="card-img"><img :src="contact.avatar" alt=""></div>
                             
@@ -67,6 +70,106 @@
                                     <time>16:15</time>
                                 </div>
                             </li>
+                        </ul>
+                    </header>
+                        
+                    <main class="app_chat"> <!-- chat -->
+
+
+                        <section class="chat_header bg-gray">
+                            <div class="card_section">
+                                <div class="card-img">
+                                    <img 
+                                    :src="contacts[contactIndex].avatar"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="card_section username">
+                                <h2>{{ contacts[contactIndex].name }}</h2>
+                                <p>Ultimo accesso oggi alle 16:26</p>
+                            </div>
+
+                            <ul class="icons">
+                                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                                <li><i class="fa-solid fa-paperclip"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </section>
+
+                        <section class="main__chat">
+                            <ul>
+                                <li class="message"
+                                v-for="currentChat in contacts[contactIndex].messages"
+                                >
+
+                                <p>
+                                    {{ currentChat.message }}
+                                </p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+
+                                </li>
+                            </ul>
+                            <!-- <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.?</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message received">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.tate!</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div>
+
+                            <div class="message sent">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                                <time>16:15</time>
+                            </div> -->
+
+                        </section>
+
+                        <section class="chat__footer">
+                            <div class="footer_icon ">
+                                <i class="fa-regular fa-face-smile block"></i>
+                            </div>
+
+                            <div class="writebar">
+                                <input type="text" id="fname" name="send" placeholder="Scrivi un messaggio" class="sendbar">
+                            </div>
+
+                            <div class="footer_icon ">
+                                <i class="fa-solid fa-microphone block"></i>
+                            </div>
+                        </section>
+
+
+                    </main>
+                 </div>
+            </div>
+     </div>
+
+     <script src="./js/app.js"></script>
+</body>
+</html>
+
+
+
+
                                 <!-- <div class="card-img"><img src="./img/avatar_1.jpg" alt=""></div>
                             
 
@@ -177,88 +280,3 @@
                                     <time>16:15</time>
                                 </div>
                             </li> -->
-                        </ul>
-                    </header>
-                        
-                    <main class="app_chat"> <!-- chat -->
-
-
-                        <section class="chat_header bg-gray">
-                            <div class="card_section">
-                                <div class="card-img"><img src="./img/avatar_1.jpg" alt=""></div>
-                            </div>
-
-                            <div class="card_section username">
-                                <h2>Michele</h2>
-                                <p>Ultimo accesso oggi alle 16:26</p>
-                            </div>
-                            
-                           
-                            
-                            
-                            
-                        
-
-                            <ul class="icons">
-                                <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                                <li><i class="fa-solid fa-paperclip"></i></li>
-                                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                            </ul>
-                        </section>
-
-                        <section class="main__chat">
-                            <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.?</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message received">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, dolore et nisi harum itaque eius repellendus consequatur rem, sit labore maxime facere eos, exercitationem assumenda deserunt fugiat velit distinctio quos.tate!</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                            <div class="message sent">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, earum. Lorem, ipsum.</p>
-                                <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
-                            </div>
-
-                        </section>
-
-                        <section class="chat__footer">
-                            <div class="footer_icon ">
-                                <i class="fa-regular fa-face-smile block"></i>
-                            </div>
-
-                            <div class="writebar">
-                                <input type="text" id="fname" name="send" placeholder="Scrivi un messaggio" class="sendbar">
-                            </div>
-
-                            <div class="footer_icon ">
-                                <i class="fa-solid fa-microphone block"></i>
-                            </div>
-                        </section>
-
-
-                    </main>
-                 </div>
-            </div>
-     </div>
-
-     <script src="./js/app.js"></script>
-</body>
-</html>

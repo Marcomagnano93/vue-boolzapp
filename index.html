@@ -47,17 +47,22 @@
                         <!-- SEARCH BAR -->
                         <nav class="search-bar">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="fname" name="search" placeholder="Cerca o inizia una nuova chat" class="search">
+                            <input type="text"
+                             id="fname"
+                             name="search"
+                             placeholder="Cerca o inizia una nuova chat"
+                             class="search"
+                             v-model="userSearch"
+                             @keyup.enter="searchContact()"
+                            >
                         </nav>
 
                         <!-- CONTACTS CARDS -->
                         <ul class="contacts_section">
-                            <li class="card"
-                            
+                            <li class="card"                      
                             v-for="(contact,i) in contacts"
                             @click="chatChanger(i)"
-                            :class="activeChat(i)"
-                            
+                            :class="activeChat(i)"                          
                             >
                                 <div class="card-img"><img :src="contact.avatar" alt=""></div>
                             
@@ -87,7 +92,7 @@
                             </div>
 
                             <div class="card_section username">
-                                <h2>{{ contacts[contactIndex].name }}</h2>
+                                <h2>{{currentContact.name}}</h2>
                                 <p>Ultimo accesso oggi alle 16:26</p>
                             </div>
 
@@ -100,15 +105,14 @@
 
                         <section class="main__chat">
                             <ul class="chat_wrapper">
-                                <li class="message"  :class="textDecoration(currentChat.status)"
+                                <li class="message"  :class="currentChat.status"
                                 v-for="currentChat in contacts[contactIndex].messages"
                                 >
-
                                 <p>
                                     {{ currentChat.message }}
                                 </p>
                                 <i class="fa-solid fa-angle-down"></i>
-                                <time>16:15</time>
+                                <time> {{ currentChat.date.slice(11, 16) }} </time>
 
                                 </li>
                             </ul>

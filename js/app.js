@@ -169,6 +169,7 @@ createApp({
         ],
         contactIndex: 0,
         userMessage: '',
+        userSearch: ''
         
       }
     },
@@ -176,10 +177,10 @@ createApp({
         chatChanger(i){
            return this.contactIndex = i;
         },
-        textDecoration(status){
-            if(status === 'received') return "received"
-            else return "sent"
-        },
+        // textDecoration(status){
+        //     if(status === 'received') return "received"
+        //     else return "sent"
+        // },
         activeChat(i){
             if(this.contactIndex === i ) return "active"           
         },
@@ -194,16 +195,47 @@ createApp({
             this.contacts[this.contactIndex].messages.push(newMessage)
             this.userMessage = "" 
             }
-            setTimeout(this.sendFakeMessage, 1000 )
+            setTimeout(this.sendFakeMessage, 1000)
         },
         sendFakeMessage(){
             let fakeMessage = {
                 date: '',
-                message: 'Ok',
+                message: 'Ok!',
                 status: 'received'
                 }
             this.contacts[this.contactIndex].messages.push(fakeMessage)
+        },
+        //crea una funzione che cicli le lettere di ogni nome
+        //serve un ciclo che cicli le lettere della parola nell'input
+        //confrontare i due cicli
+        searchContact() {
+            // let lowerName = this.currentName.toLowerCase();
+            
+            for(let i = 0; i < this.contacts.length; i++){
+
+                let nameArray = this.contactsNames.split("")
+                let userArray = this.userSearch.split("")
+
+                if(nameArray[i] !== userArray[i]) {
+                    this.contacts.filter(function (name) {
+                        return name !== this.contacts.name;
+                    });
+                }
+
+                console.log(nameArray, userArray)
+
+            }
         }
-    }
-    }
-  ).mount('#app')
+    },
+    computed: {
+		currentContact: function () {
+			return this.contacts[this.contactIndex]
+		},
+        currentName() {
+			return this.currentContact.name
+		},
+        contactsNames() {
+            return this.contacts.name
+        }
+    },
+}).mount('#app')

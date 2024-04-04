@@ -2,244 +2,232 @@ const { createApp } = Vue
 
 createApp({
     data() {
-      return {
-        contacts: [
-            {
-            name: 'Michele',
-            avatar: './img/avatar_1.jpg',
-            visible: true,
-            messages: [
+        return {
+            contactsFilter: [],
+            contacts: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                    name: 'Michele',
+                    avatar: './img/avatar_1.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai portato a spasso il cane?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di stendere i panni',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }
+                    ],
                 },
                 {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
-                status: 'sent'
+                    name: 'Fabio',
+                    avatar: './img/avatar_2.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '20/03/2020 16:30:00',
+                            message: 'Ciao come stai?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '20/03/2020 16:30:55',
+                            message: 'Bene grazie! Stasera ci vediamo?',
+                            status: 'received'
+                        },
+                        {
+                            date: '20/03/2020 16:35:00',
+                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            status: 'sent'
+                        }
+                    ],
                 },
                 {
-                date: '10/01/2020 16:15:22',
-                message: 'Tutto fatto!',
-                status: 'received'
-                }
-                ],
-            },
-            {
-            name: 'Fabio',
-            avatar: './img/avatar_2.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '20/03/2020 16:30:00',
-                message: 'Ciao come stai?',
-                status: 'sent'
+                    name: 'Samuele',
+                    avatar: './img/avatar_3.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '28/03/2020 10:10:40',
+                            message: 'La Marianna va in campagna',
+                            status: 'received'
+                        },
+                        {
+                            date: '28/03/2020 10:20:10',
+                            message: 'Sicuro di non aver sbagliato chat?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '28/03/2020 16:15:22',
+                            message: 'Ah scusa!',
+                            status: 'received'
+                        }
+                    ],
                 },
                 {
-                date: '20/03/2020 16:30:55',
-                message: 'Bene grazie! Stasera ci vediamo?',
-                status: 'received'
+                    name: 'Alessandro B.',
+                    avatar: './img/avatar_4.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Si, ma preferirei andare al cinema',
+                            status: 'received'
+                        }
+                    ],
                 },
                 {
-                date: '20/03/2020 16:35:00',
-                message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'sent'
-                }
-                ],
-            },
-            {
-            name: 'Samuele',
-            avatar: './img/avatar_3.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '28/03/2020 10:10:40',
-                message: 'La Marianna va in campagna',
-                status: 'received'
+                    name: 'Alessandro L.',
+                    avatar: './img/avatar_5.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ricordati di chiamare la nonna',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Va bene, stasera la sento',
+                            status: 'received'
+                        }
+                    ],
                 },
                 {
-                date: '28/03/2020 10:20:10',
-                message: 'Sicuro di non aver sbagliato chat?',
-                status: 'sent'
-                },
-                {
-                date: '28/03/2020 16:15:22',
-                message: 'Ah scusa!',
-                status: 'received'
-                }
-                ],
-            },
-            {
-            name: 'Alessandro B.',
-            avatar: './img/avatar_4.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '10/01/2020 15:30:55',
-                message: 'Lo sai che ha aperto una nuova pizzeria?',
-                status: 'sent'
-                },
-                {
-                date: '10/01/2020 15:50:00',
-                message: 'Si, ma preferirei andare al cinema',
-                status: 'received'
-                }
-                ],
-            },
-            {
-            name: 'Alessandro L.',
-            avatar: './img/avatar_5.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '10/01/2020 15:30:55',
-                message: 'Ricordati di chiamare la nonna',
-                status: 'sent'
-                },
-                {
-                date: '10/01/2020 15:50:00',
-                message: 'Va bene, stasera la sento',
-                status: 'received'
-                }
-                ],
-            },
-            {
-            name: 'Claudia',
-            avatar: './img/avatar_6.jpg',
-            visible: true,
+                    name: 'Claudia',
+                    avatar: './img/avatar_6.jpg',
+                    visible: true,
 
-            messages: [
-                {
-                date: '10/01/2020 15:30:55',
-                message: 'Ciao Claudia, hai novità?',
-                status: 'sent'
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao Claudia, hai novità?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Non ancora',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'Nessuna nuova, buona nuova',
+                            status: 'sent'
+                        }
+                    ],
                 },
                 {
-                date: '10/01/2020 15:50:00',
-                message: 'Non ancora',
-                status: 'received'
+                    name: 'Federico',
+                    avatar: './img/avatar_7.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                            status: 'received'
+                        }
+                    ],
                 },
                 {
-                date: '10/01/2020 15:51:00',
-                message: 'Nessuna nuova, buona nuova',
-                status: 'sent'
+                    name: 'Davide',
+                    avatar: './img/avatar_8.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'OK!!',
+                            status: 'received'
+                        }
+                    ],
                 }
-                ],
-            },
-            {
-            name: 'Federico',
-            avatar: './img/avatar_7.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '10/01/2020 15:30:55',
-                message: 'Fai gli auguri a Martina che è il suo compleanno!',
-                status: 'sent'
-                },
-                {
-                date: '10/01/2020 15:50:00',
-                message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                status: 'received'
-                }
-                ],
-            },
-            {
-            name: 'Davide',
-            avatar: './img/avatar_8.jpg',
-            visible: true,
-            messages: [
-                {
-                date: '10/01/2020 15:30:55',
-                message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                status: 'received'
-                },
-                {
-                date: '10/01/2020 15:50:00',
-                message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                status: 'sent'
-                },
-                {
-                date: '10/01/2020 15:51:00',
-                message: 'OK!!',
-                status: 'received'
-                }
-                ],
-            }
-        ],
-        contactIndex: 0,
-        userMessage: '',
-        userSearch: ''
-        
-      }
+            ],
+            contactIndex: 0,
+            userMessage: '',
+            userSearch: ''
+
+        }
     },
     methods: {
-        chatChanger(i){
-           return this.contactIndex = i;
+        chatChanger(i) {
+            return this.contactIndex = i;
         },
-        activeChat(i){
-            if(this.contactIndex === i ) return "active"           
+        activeChat(i) {
+            if (this.contactIndex === i) return "active"
         },
         sendMessage() {
-            if(this.userMessage !== "")
-            {
-            let newMessage = {
-                date: '',
-                message: this.userMessage,
-                status: 'sent'
+            if (this.userMessage !== "") {
+                let newMessage = {
+                    date: '',
+                    message: this.userMessage,
+                    status: 'sent'
                 }
-            this.contacts[this.contactIndex].messages.push(newMessage)
-            this.userMessage = "" 
+                this.contacts[this.contactIndex].messages.push(newMessage)
+                this.userMessage = ""
             }
             setTimeout(this.sendFakeMessage, 1000)
         },
-        sendFakeMessage(){
+        sendFakeMessage() {
             let fakeMessage = {
                 date: '',
                 message: 'Ok!',
                 status: 'received'
-                }
+            }
             this.contacts[this.contactIndex].messages.push(fakeMessage)
         },
         //crea una funzione che cicli le lettere di ogni nome
         //serve un ciclo che cicli le lettere della parola nell'input
         //confrontare i due cicli
         searchContact() {
-            // let lowerName = this.currentName.toLowerCase();
+            const contactsFilter = [];
+
             
-            for(let i = 0; i < this.contacts.length; i++){
+            for (let i = 0; i < this.contacts.length; i++) {
 
-
-               
-
-
-                //rendi minuscola la prima lettera di ogni nome
                 const lowerCaseName = this.contacts[i].name.toLowerCase()
-                // ogni nome diventa un array di lettere
-                const nameArray = lowerCaseName.split("")
-                // //fai diventare la parola dell'utente un array di lettere
-                const userArray = this.userSearch.split("")
-                // //confronta le lettere della parola inserita dall'utente con tutte quelle presenti nei nomi dell'array
-                console.log(nameArray, userArray)
 
-                this.contacts.filter(function (){
-                return this.contacts[i].name !== userArray[i]
-                })
-               
-                
-               console.log(this.contacts)
-
-
+                if (lowerCaseName.includes(this.userSearch.toLowerCase())) {
+                    contactsFilter.push(this.contacts[i]);
+                }
             }
-            this.userSearch = "";
+            this.contactsFilter = contactsFilter;
         }
     },
     computed: {
-		currentContact: function () {
-			return this.contacts[this.contactIndex]
-		},
+        currentContact: function () {
+            return this.contacts[this.contactIndex]
+        },
         currentName() {
-			return this.currentContact.name
-		},
+            return this.currentContact.name
+        },
     },
+    mounted() {
+        this.contactsFilter = this.contacts;
+    }
 }).mount('#app')

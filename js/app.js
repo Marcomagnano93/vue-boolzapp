@@ -177,10 +177,6 @@ createApp({
         chatChanger(i){
            return this.contactIndex = i;
         },
-        // textDecoration(status){
-        //     if(status === 'received') return "received"
-        //     else return "sent"
-        // },
         activeChat(i){
             if(this.contactIndex === i ) return "active"           
         },
@@ -213,18 +209,27 @@ createApp({
             
             for(let i = 0; i < this.contacts.length; i++){
 
-                let nameArray = this.contactsNames.split("")
-                let userArray = this.userSearch.split("")
 
-                if(nameArray[i] !== userArray[i]) {
-                    this.contacts.filter(function (name) {
-                        return name !== this.contacts.name;
-                    });
-                }
+               
+
+                // const topStudents = this.contacts.filter((this.contacts.name) => student.grades > 70)
+                //crea un array di nomi
+
+                // ogni nome diventa un array di lettere
+                const nameArray = this.contacts[i].name.split("")
+                // //fai diventare la parola dell'utente un array di lettere
+                const userArray = this.userSearch.split("")
+                // //confronta le lettere della parola inserita dall'utente con tutte quelle presenti nei nomi dell'array
+                
 
                 console.log(nameArray, userArray)
 
+                
+
+
+
             }
+            this.userSearch = "";
         }
     },
     computed: {

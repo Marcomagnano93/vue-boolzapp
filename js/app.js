@@ -213,19 +213,21 @@ createApp({
                
 
                 // const topStudents = this.contacts.filter((this.contacts.name) => student.grades > 70)
-                //crea un array di nomi
-
+                //rendi minuscola la prima lettera di ogni nome
+                const lowerCaseName = this.contacts[i].name.toLowerCase()
                 // ogni nome diventa un array di lettere
-                const nameArray = this.contacts[i].name.split("")
+                const nameArray = lowerCaseName.split("")
                 // //fai diventare la parola dell'utente un array di lettere
                 const userArray = this.userSearch.split("")
                 // //confronta le lettere della parola inserita dall'utente con tutte quelle presenti nei nomi dell'array
-                
-
                 console.log(nameArray, userArray)
 
+                // this.contacts.filter(function (name){
+                // return name !== userArray[i]
+                // })
+               this.contacts.filter(nameArray.includes(userArray))
                 
-
+               console.log(this.contacts)
 
 
             }
@@ -239,8 +241,5 @@ createApp({
         currentName() {
 			return this.currentContact.name
 		},
-        contactsNames() {
-            return this.contacts.name
-        }
     },
 }).mount('#app')

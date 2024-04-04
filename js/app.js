@@ -212,7 +212,7 @@ createApp({
 
                
 
-                // const topStudents = this.contacts.filter((this.contacts.name) => student.grades > 70)
+
                 //rendi minuscola la prima lettera di ogni nome
                 const lowerCaseName = this.contacts[i].name.toLowerCase()
                 // ogni nome diventa un array di lettere
@@ -222,10 +222,10 @@ createApp({
                 // //confronta le lettere della parola inserita dall'utente con tutte quelle presenti nei nomi dell'array
                 console.log(nameArray, userArray)
 
-                // this.contacts.filter(function (name){
-                // return name !== userArray[i]
-                // })
-               this.contacts.filter(nameArray.includes(userArray))
+                this.contacts.filter(function (){
+                return this.contacts[i].name !== userArray[i]
+                })
+               
                 
                console.log(this.contacts)
 

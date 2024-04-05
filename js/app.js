@@ -182,32 +182,29 @@ createApp({
             if (this.contactIndex === i) return "active"
         },
         sendMessage() {
+
+            const chat =  this.contacts[this.contactIndex].messages
             if (this.userMessage !== "") {
-                let newMessage = {
-                    date: '',
+                const newMessage = {
+                    date: '10/01/2020 15:30:55',
                     message: this.userMessage,
                     status: 'sent'
                 }
-                this.contacts[this.contactIndex].messages.push(newMessage)
+                chat.push(newMessage)
                 this.userMessage = ""
             }
-            setTimeout(this.sendFakeMessage, 1000)
-        },
-        sendFakeMessage() {
-            let fakeMessage = {
-                date: '',
-                message: 'Ok!',
-                status: 'received'
+            setTimeout(() => {
+                const fakeMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'Ok!',
+                    status: 'received'
+                }
+                chat.push(fakeMessage)
             }
-            this.contacts[this.contactIndex].messages.push(fakeMessage)
+            , 3000)
         },
-        //crea una funzione che cicli le lettere di ogni nome
-        //serve un ciclo che cicli le lettere della parola nell'input
-        //confrontare i due cicli
         searchContact() {
-            const contactsFilter = [];
-
-            
+            const contactsFilter = [];         
             for (let i = 0; i < this.contacts.length; i++) {
 
                 const lowerCaseName = this.contacts[i].name.toLowerCase()
@@ -217,6 +214,13 @@ createApp({
                 }
             }
             this.contactsFilter = contactsFilter;
+        },
+        filteredContacts() {
+            if (this.contactSearch === '') {
+              return this.contacts
+            } else {
+              return this.contacts.filter((el) => el.name.toLowerCase().includes(this.contactSearch.toLowerCase()) )
+            }
         }
     },
     computed: {
@@ -227,7 +231,12 @@ createApp({
             return this.currentContact.name
         },
     },
+    watch: {
+        userSearch(){}
+    },
     mounted() {
         this.contactsFilter = this.contacts;
     }
 }).mount('#app')
+
+

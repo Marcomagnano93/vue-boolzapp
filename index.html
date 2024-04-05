@@ -108,7 +108,7 @@
                                 <p>
                                     {{ currentChat.message }}
                                 </p>
-                                <i class="fa-solid fa-angle-down dropdown" @click="currentChat.dropdownMenu()"></i>
+                                <i class="fa-solid fa-angle-down dropdown" @click="dropdownMenu(currentChat, i)"></i>
                                 <div class="dropdown-content">
                                     <div>Message info</div>
                                     <div>Delete</div>

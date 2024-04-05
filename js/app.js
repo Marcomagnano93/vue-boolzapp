@@ -182,8 +182,7 @@ createApp({
             if (this.contactIndex === i) return "active"
         },
         sendMessage() {
-
-            const chat =  this.contacts[this.contactIndex].messages
+            const chat = this.contacts[this.contactIndex].messages;
             if (this.userMessage !== "") {
                 const newMessage = {
                     date: '10/01/2020 15:30:55',
@@ -201,7 +200,7 @@ createApp({
                 }
                 chat.push(fakeMessage)
             }
-            , 3000)
+            , 1000)
         },
         searchContact() {
             const contactsFilter = [];         
@@ -215,13 +214,13 @@ createApp({
             }
             this.contactsFilter = contactsFilter;
         },
-        filteredContacts() {
-            if (this.contactSearch === '') {
-              return this.contacts
-            } else {
-              return this.contacts.filter((el) => el.name.toLowerCase().includes(this.contactSearch.toLowerCase()) )
-            }
-        }
+        // filteredContacts() {
+        //     if (this.userSearch === '') {
+        //       return this.contacts
+        //     } else {
+        //       return this.contacts.filter((el) => el.name.toLowerCase().includes(this.userSearch.toLowerCase()) )
+        //     }
+        // }
     },
     computed: {
         currentContact: function () {
@@ -232,7 +231,9 @@ createApp({
         },
     },
     watch: {
-        userSearch(){}
+        userSearch(){
+            return this.searchContact()
+        }
     },
     mounted() {
         this.contactsFilter = this.contacts;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
     <script src="https://kit.fontawesome.com/608f77ef5b.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="./css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,12 +103,16 @@
                         <section class="main__chat">
                             <ul class="chat_wrapper">
                                 <li class="message"  :class="currentChat.status"
-                                v-for="currentChat in currentContact.messages"
+                                v-for="(currentChat, i) in currentContact.messages"
                                 >
                                 <p>
                                     {{ currentChat.message }}
                                 </p>
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i class="fa-solid fa-angle-down dropdown" @click="currentChat.dropdownMenu()"></i>
+                                <div class="dropdown-content">
+                                    <div>Message info</div>
+                                    <div>Delete</div>
+                                </div>
                                 <time> {{ currentChat.date.slice(11, 16) }} </time>
 
                                 </li>
@@ -141,5 +146,6 @@
      </div>
 
      <script src="./js/app.js"></script>
+     
 </body>
 </html>

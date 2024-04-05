@@ -221,6 +221,18 @@ createApp({
         //       return this.contacts.filter((el) => el.name.toLowerCase().includes(this.userSearch.toLowerCase()) )
         //     }
         // }
+        dropdownMenu() {
+
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            
+            for (i = 0; i < dropdowns.length; i++) {
+            let openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                }
+            else {openDropdown.classList.add('show')}
+            }
+        }
     },
     computed: {
         currentContact: function () {
@@ -228,6 +240,9 @@ createApp({
         },
         currentName() {
             return this.currentContact.name
+        },
+        currentMessage() {
+            return this.currentContact.message
         },
     },
     watch: {
